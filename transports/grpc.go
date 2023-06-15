@@ -9,6 +9,22 @@ import (
 
 type gRPCServer struct {
 	listCarTypes gt.Handler
+	listCarMarks gt.Handler
+}
+
+func NewGRPCServer(endpoints endpoints.Endpoints) catalog.AutoCatalogServiceServer {
+	return &gRPCServer{
+		listCarTypes: gt.NewServer(
+			endpoints.ListCarTypes,
+			decodeListCarTypesRequest,
+			encodeListCarTypesResponse,
+		),
+		listCarMarks: gt.NewServer(
+			endpoints.ListCarMarks,
+			decodeListCarMarksRequest,
+			encodeListCarMarksResponse,
+		),
+	}
 }
 
 func (g gRPCServer) ListCarTypes(ctx context.Context, req *catalog.Empty) (*catalog.ListCarTypesResponse, error) {
@@ -19,14 +35,12 @@ func (g gRPCServer) ListCarTypes(ctx context.Context, req *catalog.Empty) (*cata
 	return resp.(*catalog.ListCarTypesResponse), nil
 }
 
-func NewGRPCServer(endpoints endpoints.Endpoints) catalog.AutoCatalogServiceServer {
-	return &gRPCServer{
-		listCarTypes: gt.NewServer(
-			endpoints.ListCarTypes,
-			decodeListCarTypesRequest,
-			encodeListCarTypesResponse,
-		),
+func (g gRPCServer) ListCarMarks(ctx context.Context, req *catalog.CarRequest) (*catalog.ListCarMarkResponse, error) {
+	_, resp, err := g.listCarMarks.ServeGRPC(ctx, req)
+	if err != nil {
+		return nil, err
 	}
+	return resp.(*catalog.ListCarMarkResponse), nil
 }
 
 func decodeListCarTypesRequest(_ context.Context, request interface{}) (interface{}, error) {
@@ -36,4 +50,14 @@ func decodeListCarTypesRequest(_ context.Context, request interface{}) (interfac
 func encodeListCarTypesResponse(_ context.Context, response interface{}) (interface{}, error) {
 	resp := response.(endpoints.ListCarTypesResponse)
 	return &catalog.ListCarTypesResponse{CarTypes: resp.CarTypes}, nil
+}
+
+func decodeListCarMarksRequest(_ context.Context, request interface{}) (interface{}, error) {
+	req := request.(*catalog.CarRequest)
+	return endpoints.CarRequest{Id: req.Id}, nil
+}
+
+func encodeListCarMarksResponse(_ context.Context, response interface{}) (interface{}, error) {
+	resp := response.(endpoints.ListCarMarksResponse)
+	return &catalog.ListCarMarkResponse{CarMarks: resp.CarMarks}, nil
 }

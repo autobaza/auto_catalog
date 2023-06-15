@@ -1,18 +1,32 @@
 syntax = "proto3";
 
-//option go_package = "github.com/autobaza/auto_catalog/protos";
-
 service AutoCatalogService {
   rpc ListCarTypes(Empty) returns (ListCarTypesResponse) {}
+  rpc ListCarMarks(CarRequest) returns (ListCarMarkResponse) {}
 }
 
 message ListCarTypesResponse {
   repeated CarType carTypes = 1;
 }
 
+message ListCarMarkResponse {
+  repeated CarMark carMarks = 1;
+}
+
+message Empty{}
+
 message CarType {
   string id = 1;
   string name = 2;
 }
 
-message Empty{}
+message CarRequest {
+  string id = 1;
+}
+
+message CarMark {
+  string id = 1;
+  string name = 2;
+  string type_id = 3;
+  string name_rus = 4;
+}
