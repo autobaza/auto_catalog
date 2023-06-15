@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/autobaza/auto_catalog/endpoints"
 	catalog "github.com/autobaza/auto_catalog/protos"
+	"github.com/autobaza/auto_catalog/repository"
 	"github.com/autobaza/auto_catalog/service"
 	"github.com/autobaza/auto_catalog/transports"
 	"github.com/go-kit/kit/log"
@@ -18,11 +19,13 @@ import (
 func main() {
 
 	var logger log.Logger
-	logger = log.NewJSONLogger(os.Stdout)
+	logger = log.NewLogfmtLogger(os.Stdout)
 	logger = log.With(logger, "ts", log.DefaultTimestampUTC)
 	logger = log.With(logger, "caller", log.DefaultCaller)
 
-	srv := service.NewService(logger)
+	var repo = repository.NewRepository()
+
+	srv := service.NewService(logger, repo)
 	endpts := endpoints.MakeEndpoints(srv)
 	grpcServer := transports.NewGRPCServer(endpts)
 
