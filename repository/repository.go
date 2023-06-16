@@ -8,6 +8,7 @@ import (
 type Repository interface {
 	GetCarTypes() []*catalog.CarType
 	GetCarMarks(string) []*catalog.CarMark
+	GetCarModels(string) []*catalog.CarModel
 }
 
 type repository struct {
@@ -68,6 +69,28 @@ func (r *repository) GetCarMarks(id string) []*catalog.CarMark {
 			panic(err.Error())
 		}
 		resp = append(resp, &catalog.CarMark{Id: carmark.Id, Name: carmark.Name, TypeId: carmark.TypeId, NameRus: carmark.NameRus})
+	}
+	return resp
+}
+
+func (r *repository) GetCarModels(id string) []*catalog.CarModel {
+	results, err := r.db.Query("SELECT id_car_model, id_car_mark, name, coalesce(name_rus, '') FROM car_model WHERE id_car_mark = ?", id)
+	if err != nil {
+		panic(err.Error())
+	}
+	var resp []*catalog.CarModel
+	for results.Next() {
+		var carmodel struct {
+			Id      string `json:"id_car_model"`
+			MarkId  string `json:"id_car_mark"`
+			Name    string `json:"name"`
+			NameRus string `json:"name_rus"`
+		}
+		err = results.Scan(&carmodel.Id, &carmodel.MarkId, &carmodel.Name, &carmodel.NameRus)
+		if err != nil {
+			panic(err.Error())
+		}
+		resp = append(resp, &catalog.CarModel{Id: carmodel.Id, Name: carmodel.Name, MarkId: carmodel.MarkId, NameRus: carmodel.NameRus})
 	}
 	return resp
 }

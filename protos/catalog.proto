@@ -3,6 +3,7 @@ syntax = "proto3";
 service AutoCatalogService {
   rpc ListCarTypes(Empty) returns (ListCarTypesResponse) {}
   rpc ListCarMarks(CarRequest) returns (ListCarMarkResponse) {}
+  rpc ListCarModels(CarRequest) returns (ListCarModelResponse) {}
 }
 
 message ListCarTypesResponse {
@@ -13,20 +14,32 @@ message ListCarMarkResponse {
   repeated CarMark carMarks = 1;
 }
 
-message Empty{}
-
-message CarType {
-  string id = 1;
-  string name = 2;
+message ListCarModelResponse {
+  repeated CarModel carModels = 1;
 }
+
+message Empty{}
 
 message CarRequest {
   string id = 1;
+}
+
+// -----------
+message CarType {
+  string id = 1;
+  string name = 2;
 }
 
 message CarMark {
   string id = 1;
   string name = 2;
   string type_id = 3;
+  string name_rus = 4;
+}
+
+message CarModel {
+  string id = 1;
+  string name = 2;
+  string mark_id = 3;
   string name_rus = 4;
 }

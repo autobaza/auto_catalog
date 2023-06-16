@@ -1,29 +1,5 @@
--- phpMyAdmin SQL Dump
--- version 3.5.1
--- http://www.phpmyadmin.net
---
--- Хост: 127.0.0.1
--- Время создания: Май 24 2015 г., 12:01
--- Версия сервера: 5.6.22-log
--- Версия PHP: 5.4.35
-
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- База данных: `auto_spec_20150601_cut`
---
-
-
---
--- Дамп данных таблицы `car_characteristic`
---
 
 INSERT INTO `car_characteristic` (`id_car_characteristic`, `name`, `id_parent`, `id_car_type`) VALUES
 (773, 'Максимальный радиус копания', 755, 11),
@@ -324,10 +300,6 @@ INSERT INTO `car_model` (`id_car_model`, `id_car_mark`, `name`, `id_car_type`, `
 (4636, 913, 'АП', 8, NULL),
 (4706, 936, 'Автогидроподъемники', 8, NULL);
 
---
--- Дамп данных таблицы `car_modification`
---
-
 INSERT INTO `car_modification` (`id_car_modification`, `id_car_serie`, `id_car_model`, `name`, `id_car_type`) VALUES
 (81597, 20948, 4636, 'ВС-18А-01', 8),
 (81598, 20949, 4636, 'АП-18-09', 8),
@@ -341,11 +313,6 @@ INSERT INTO `car_serie` (`id_car_serie`, `id_car_model`, `name`, `id_car_type`) 
 (20950, 4636, 'АП-131', 8),
 (21027, 4706, '25.285 MNLC', 8);
 
-
---
--- Дамп данных таблицы `car_type`
---
-
 INSERT INTO `car_type` (`id_car_type`, `name`) VALUES
 (8, 'автокраны'),
 (9, 'бальдозеры'),
@@ -355,7 +322,3 @@ INSERT INTO `car_type` (`id_car_type`, `name`) VALUES
 (13, 'коммунальная'),
 (14, 'самопогрузчики'),
 (15, 'строительная техника');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

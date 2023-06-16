@@ -11,7 +11,7 @@ import (
 type Service interface {
 	ListCarTypes(context.Context) []*catalog.CarType
 	ListCarMarks(context.Context, string) []*catalog.CarMark
-	//GetCarModels(int)
+	ListCarModels(context.Context, string) []*catalog.CarModel
 	//GetCarGenerations(int)
 	//GetCarSeriesByModel(int)
 	//getCarSeriesByGeneration(int)
@@ -44,10 +44,10 @@ func (s *service) ListCarMarks(ctx context.Context, id string) []*catalog.CarMar
 	return s.repo.GetCarMarks(id)
 }
 
-//
-//func (s *service) GetCarModels(carMarkId int) {
-//
-//}
+func (s *service) ListCarModels(ctx context.Context, id string) []*catalog.CarModel {
+	return s.repo.GetCarModels(id)
+}
+
 //
 //func (s *service) GetCarGenerations(carModelId int) {
 //

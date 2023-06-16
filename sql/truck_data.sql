@@ -2,12 +2,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
-
 INSERT INTO `car_characteristic` (`id_car_characteristic`, `name`, `id_parent`, `id_car_type`) VALUES
 (424, 'Время разгона до 60 км/ч', 390, 2),
 (423, 'Полная масса с прицепом', 397, 2),
@@ -12475,7 +12469,3 @@ INSERT INTO `car_type` (`id_car_type`, `name`) VALUES
 (4, 'Прицепы'),
 (5, 'Грузовики'),
 (6, 'Автобусы');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

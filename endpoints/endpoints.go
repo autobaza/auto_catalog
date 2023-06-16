@@ -8,14 +8,16 @@ import (
 )
 
 type Endpoints struct {
-	ListCarTypes endpoint.Endpoint
-	ListCarMarks endpoint.Endpoint
+	ListCarTypes  endpoint.Endpoint
+	ListCarMarks  endpoint.Endpoint
+	ListCarModels endpoint.Endpoint
 }
 
 func MakeEndpoints(s service.Service) Endpoints {
 	return Endpoints{
-		ListCarTypes: makeListCarTypesEndpoint(s),
-		ListCarMarks: makeListCarMarksEndpoint(s),
+		ListCarTypes:  makeListCarTypesEndpoint(s),
+		ListCarMarks:  makeListCarMarksEndpoint(s),
+		ListCarModels: makeListCarModelsEndpoint(s),
 	}
 }
 
@@ -32,6 +34,13 @@ func makeListCarMarksEndpoint(s service.Service) endpoint.Endpoint {
 	}
 }
 
+func makeListCarModelsEndpoint(s service.Service) endpoint.Endpoint {
+	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		req := request.(CarRequest)
+		return ListCarModelsResponse{CarModels: s.ListCarModels(ctx, req.Id)}, nil
+	}
+}
+
 type CarRequest struct {
 	Id string
 }
@@ -42,4 +51,8 @@ type ListCarTypesResponse struct {
 
 type ListCarMarksResponse struct {
 	CarMarks []*catalog.CarMark
+}
+
+type ListCarModelsResponse struct {
+	CarModels []*catalog.CarModel
 }

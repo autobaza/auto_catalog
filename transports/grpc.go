@@ -8,8 +8,9 @@ import (
 )
 
 type gRPCServer struct {
-	listCarTypes gt.Handler
-	listCarMarks gt.Handler
+	listCarTypes  gt.Handler
+	listCarMarks  gt.Handler
+	listCarModels gt.Handler
 }
 
 func NewGRPCServer(endpoints endpoints.Endpoints) catalog.AutoCatalogServiceServer {
@@ -23,6 +24,11 @@ func NewGRPCServer(endpoints endpoints.Endpoints) catalog.AutoCatalogServiceServ
 			endpoints.ListCarMarks,
 			decodeListCarMarksRequest,
 			encodeListCarMarksResponse,
+		),
+		listCarModels: gt.NewServer(
+			endpoints.ListCarModels,
+			decodeListCarModelsRequest,
+			encodeListCarModelsResponse,
 		),
 	}
 }
@@ -43,6 +49,14 @@ func (g gRPCServer) ListCarMarks(ctx context.Context, req *catalog.CarRequest) (
 	return resp.(*catalog.ListCarMarkResponse), nil
 }
 
+func (g gRPCServer) ListCarModels(ctx context.Context, req *catalog.CarRequest) (*catalog.ListCarModelResponse, error) {
+	_, resp, err := g.listCarModels.ServeGRPC(ctx, req)
+	if err != nil {
+		return nil, err
+	}
+	return resp.(*catalog.ListCarModelResponse), nil
+}
+
 func decodeListCarTypesRequest(_ context.Context, request interface{}) (interface{}, error) {
 	return nil, nil
 }
@@ -60,4 +74,14 @@ func decodeListCarMarksRequest(_ context.Context, request interface{}) (interfac
 func encodeListCarMarksResponse(_ context.Context, response interface{}) (interface{}, error) {
 	resp := response.(endpoints.ListCarMarksResponse)
 	return &catalog.ListCarMarkResponse{CarMarks: resp.CarMarks}, nil
+}
+
+func decodeListCarModelsRequest(_ context.Context, request interface{}) (interface{}, error) {
+	req := request.(*catalog.CarRequest)
+	return endpoints.CarRequest{Id: req.Id}, nil
+}
+
+func encodeListCarModelsResponse(_ context.Context, response interface{}) (interface{}, error) {
+	resp := response.(endpoints.ListCarModelsResponse)
+	return &catalog.ListCarModelResponse{CarModels: resp.CarModels}, nil
 }
