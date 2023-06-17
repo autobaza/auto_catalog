@@ -20,6 +20,138 @@ func (_m *Repository) EXPECT() *Repository_Expecter {
 	return &Repository_Expecter{mock: &_m.Mock}
 }
 
+// GetCarCharacteristicValue provides a mock function with given fields: _a0
+func (_m *Repository) GetCarCharacteristicValue(_a0 string) []*catalog.CarCharacteristicValue {
+	ret := _m.Called(_a0)
+
+	var r0 []*catalog.CarCharacteristicValue
+	if rf, ok := ret.Get(0).(func(string) []*catalog.CarCharacteristicValue); ok {
+		r0 = rf(_a0)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]*catalog.CarCharacteristicValue)
+		}
+	}
+
+	return r0
+}
+
+// Repository_GetCarCharacteristicValue_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetCarCharacteristicValue'
+type Repository_GetCarCharacteristicValue_Call struct {
+	*mock.Call
+}
+
+// GetCarCharacteristicValue is a helper method to define mock.On call
+//   - _a0 string
+func (_e *Repository_Expecter) GetCarCharacteristicValue(_a0 interface{}) *Repository_GetCarCharacteristicValue_Call {
+	return &Repository_GetCarCharacteristicValue_Call{Call: _e.mock.On("GetCarCharacteristicValue", _a0)}
+}
+
+func (_c *Repository_GetCarCharacteristicValue_Call) Run(run func(_a0 string)) *Repository_GetCarCharacteristicValue_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(string))
+	})
+	return _c
+}
+
+func (_c *Repository_GetCarCharacteristicValue_Call) Return(_a0 []*catalog.CarCharacteristicValue) *Repository_GetCarCharacteristicValue_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *Repository_GetCarCharacteristicValue_Call) RunAndReturn(run func(string) []*catalog.CarCharacteristicValue) *Repository_GetCarCharacteristicValue_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetCarEquipments provides a mock function with given fields: _a0
+func (_m *Repository) GetCarEquipments(_a0 string) []*catalog.CarEquipment {
+	ret := _m.Called(_a0)
+
+	var r0 []*catalog.CarEquipment
+	if rf, ok := ret.Get(0).(func(string) []*catalog.CarEquipment); ok {
+		r0 = rf(_a0)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]*catalog.CarEquipment)
+		}
+	}
+
+	return r0
+}
+
+// Repository_GetCarEquipments_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetCarEquipments'
+type Repository_GetCarEquipments_Call struct {
+	*mock.Call
+}
+
+// GetCarEquipments is a helper method to define mock.On call
+//   - _a0 string
+func (_e *Repository_Expecter) GetCarEquipments(_a0 interface{}) *Repository_GetCarEquipments_Call {
+	return &Repository_GetCarEquipments_Call{Call: _e.mock.On("GetCarEquipments", _a0)}
+}
+
+func (_c *Repository_GetCarEquipments_Call) Run(run func(_a0 string)) *Repository_GetCarEquipments_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(string))
+	})
+	return _c
+}
+
+func (_c *Repository_GetCarEquipments_Call) Return(_a0 []*catalog.CarEquipment) *Repository_GetCarEquipments_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *Repository_GetCarEquipments_Call) RunAndReturn(run func(string) []*catalog.CarEquipment) *Repository_GetCarEquipments_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetCarGenerations provides a mock function with given fields: _a0
+func (_m *Repository) GetCarGenerations(_a0 string) []*catalog.CarGeneration {
+	ret := _m.Called(_a0)
+
+	var r0 []*catalog.CarGeneration
+	if rf, ok := ret.Get(0).(func(string) []*catalog.CarGeneration); ok {
+		r0 = rf(_a0)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]*catalog.CarGeneration)
+		}
+	}
+
+	return r0
+}
+
+// Repository_GetCarGenerations_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetCarGenerations'
+type Repository_GetCarGenerations_Call struct {
+	*mock.Call
+}
+
+// GetCarGenerations is a helper method to define mock.On call
+//   - _a0 string
+func (_e *Repository_Expecter) GetCarGenerations(_a0 interface{}) *Repository_GetCarGenerations_Call {
+	return &Repository_GetCarGenerations_Call{Call: _e.mock.On("GetCarGenerations", _a0)}
+}
+
+func (_c *Repository_GetCarGenerations_Call) Run(run func(_a0 string)) *Repository_GetCarGenerations_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(string))
+	})
+	return _c
+}
+
+func (_c *Repository_GetCarGenerations_Call) Return(_a0 []*catalog.CarGeneration) *Repository_GetCarGenerations_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *Repository_GetCarGenerations_Call) RunAndReturn(run func(string) []*catalog.CarGeneration) *Repository_GetCarGenerations_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
 // GetCarMarks provides a mock function with given fields: _a0
 func (_m *Repository) GetCarMarks(_a0 string) []*catalog.CarMark {
 	ret := _m.Called(_a0)
@@ -104,6 +236,138 @@ func (_c *Repository_GetCarModels_Call) Return(_a0 []*catalog.CarModel) *Reposit
 }
 
 func (_c *Repository_GetCarModels_Call) RunAndReturn(run func(string) []*catalog.CarModel) *Repository_GetCarModels_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetCarModifications provides a mock function with given fields: _a0
+func (_m *Repository) GetCarModifications(_a0 string) []*catalog.CarModification {
+	ret := _m.Called(_a0)
+
+	var r0 []*catalog.CarModification
+	if rf, ok := ret.Get(0).(func(string) []*catalog.CarModification); ok {
+		r0 = rf(_a0)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]*catalog.CarModification)
+		}
+	}
+
+	return r0
+}
+
+// Repository_GetCarModifications_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetCarModifications'
+type Repository_GetCarModifications_Call struct {
+	*mock.Call
+}
+
+// GetCarModifications is a helper method to define mock.On call
+//   - _a0 string
+func (_e *Repository_Expecter) GetCarModifications(_a0 interface{}) *Repository_GetCarModifications_Call {
+	return &Repository_GetCarModifications_Call{Call: _e.mock.On("GetCarModifications", _a0)}
+}
+
+func (_c *Repository_GetCarModifications_Call) Run(run func(_a0 string)) *Repository_GetCarModifications_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(string))
+	})
+	return _c
+}
+
+func (_c *Repository_GetCarModifications_Call) Return(_a0 []*catalog.CarModification) *Repository_GetCarModifications_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *Repository_GetCarModifications_Call) RunAndReturn(run func(string) []*catalog.CarModification) *Repository_GetCarModifications_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetCarSeriesByGeneration provides a mock function with given fields: _a0
+func (_m *Repository) GetCarSeriesByGeneration(_a0 string) []*catalog.CarSerie {
+	ret := _m.Called(_a0)
+
+	var r0 []*catalog.CarSerie
+	if rf, ok := ret.Get(0).(func(string) []*catalog.CarSerie); ok {
+		r0 = rf(_a0)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]*catalog.CarSerie)
+		}
+	}
+
+	return r0
+}
+
+// Repository_GetCarSeriesByGeneration_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetCarSeriesByGeneration'
+type Repository_GetCarSeriesByGeneration_Call struct {
+	*mock.Call
+}
+
+// GetCarSeriesByGeneration is a helper method to define mock.On call
+//   - _a0 string
+func (_e *Repository_Expecter) GetCarSeriesByGeneration(_a0 interface{}) *Repository_GetCarSeriesByGeneration_Call {
+	return &Repository_GetCarSeriesByGeneration_Call{Call: _e.mock.On("GetCarSeriesByGeneration", _a0)}
+}
+
+func (_c *Repository_GetCarSeriesByGeneration_Call) Run(run func(_a0 string)) *Repository_GetCarSeriesByGeneration_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(string))
+	})
+	return _c
+}
+
+func (_c *Repository_GetCarSeriesByGeneration_Call) Return(_a0 []*catalog.CarSerie) *Repository_GetCarSeriesByGeneration_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *Repository_GetCarSeriesByGeneration_Call) RunAndReturn(run func(string) []*catalog.CarSerie) *Repository_GetCarSeriesByGeneration_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetCarSeriesByModel provides a mock function with given fields: _a0
+func (_m *Repository) GetCarSeriesByModel(_a0 string) []*catalog.CarSerie {
+	ret := _m.Called(_a0)
+
+	var r0 []*catalog.CarSerie
+	if rf, ok := ret.Get(0).(func(string) []*catalog.CarSerie); ok {
+		r0 = rf(_a0)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]*catalog.CarSerie)
+		}
+	}
+
+	return r0
+}
+
+// Repository_GetCarSeriesByModel_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetCarSeriesByModel'
+type Repository_GetCarSeriesByModel_Call struct {
+	*mock.Call
+}
+
+// GetCarSeriesByModel is a helper method to define mock.On call
+//   - _a0 string
+func (_e *Repository_Expecter) GetCarSeriesByModel(_a0 interface{}) *Repository_GetCarSeriesByModel_Call {
+	return &Repository_GetCarSeriesByModel_Call{Call: _e.mock.On("GetCarSeriesByModel", _a0)}
+}
+
+func (_c *Repository_GetCarSeriesByModel_Call) Run(run func(_a0 string)) *Repository_GetCarSeriesByModel_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(string))
+	})
+	return _c
+}
+
+func (_c *Repository_GetCarSeriesByModel_Call) Return(_a0 []*catalog.CarSerie) *Repository_GetCarSeriesByModel_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *Repository_GetCarSeriesByModel_Call) RunAndReturn(run func(string) []*catalog.CarSerie) *Repository_GetCarSeriesByModel_Call {
 	_c.Call.Return(run)
 	return _c
 }

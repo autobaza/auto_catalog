@@ -8,9 +8,15 @@ import (
 )
 
 type gRPCServer struct {
-	listCarTypes  gt.Handler
-	listCarMarks  gt.Handler
-	listCarModels gt.Handler
+	listCarTypes               gt.Handler
+	listCarMarks               gt.Handler
+	listCarModels              gt.Handler
+	listCarGenerations         gt.Handler
+	listCarSeriesByModel       gt.Handler
+	listCarSeriesByGeneration  gt.Handler
+	listCarModifications       gt.Handler
+	listCarEquipments          gt.Handler
+	listCarCharacteristicValue gt.Handler
 }
 
 func NewGRPCServer(endpoints endpoints.Endpoints) catalog.AutoCatalogServiceServer {
@@ -22,13 +28,43 @@ func NewGRPCServer(endpoints endpoints.Endpoints) catalog.AutoCatalogServiceServ
 		),
 		listCarMarks: gt.NewServer(
 			endpoints.ListCarMarks,
-			decodeListCarMarksRequest,
+			decodeCarRequest,
 			encodeListCarMarksResponse,
 		),
 		listCarModels: gt.NewServer(
 			endpoints.ListCarModels,
-			decodeListCarModelsRequest,
+			decodeCarRequest,
 			encodeListCarModelsResponse,
+		),
+		listCarGenerations: gt.NewServer(
+			endpoints.ListCarGenerations,
+			decodeCarRequest,
+			encodeListCarGenerationsResponse,
+		),
+		listCarSeriesByModel: gt.NewServer(
+			endpoints.ListCarSeriesByModel,
+			decodeCarRequest,
+			encodeListCarSeriesResponse,
+		),
+		listCarSeriesByGeneration: gt.NewServer(
+			endpoints.ListCarSeriesByGeneration,
+			decodeCarRequest,
+			encodeListCarSeriesResponse,
+		),
+		listCarModifications: gt.NewServer(
+			endpoints.ListCarModifications,
+			decodeCarRequest,
+			encodeListCarModificationsResponse,
+		),
+		listCarEquipments: gt.NewServer(
+			endpoints.ListCarEquipments,
+			decodeCarRequest,
+			encodeListCarEquipmentsResponse,
+		),
+		listCarCharacteristicValue: gt.NewServer(
+			endpoints.ListCarCharacteristicValues,
+			decodeCarRequest,
+			encodeListCarCharacteristicValueResponse,
 		),
 	}
 }
@@ -57,6 +93,54 @@ func (g gRPCServer) ListCarModels(ctx context.Context, req *catalog.CarRequest) 
 	return resp.(*catalog.ListCarModelResponse), nil
 }
 
+func (g gRPCServer) ListCarGenerations(ctx context.Context, req *catalog.CarRequest) (*catalog.ListCarGenerationResponse, error) {
+	_, resp, err := g.listCarGenerations.ServeGRPC(ctx, req)
+	if err != nil {
+		return nil, err
+	}
+	return resp.(*catalog.ListCarGenerationResponse), nil
+}
+
+func (g gRPCServer) ListCarSeriesByModel(ctx context.Context, request *catalog.CarRequest) (*catalog.ListCarSeriesResponse, error) {
+	_, resp, err := g.listCarSeriesByModel.ServeGRPC(ctx, request)
+	if err != nil {
+		return nil, err
+	}
+	return resp.(*catalog.ListCarSeriesResponse), nil
+}
+
+func (g gRPCServer) ListCarSeriesByGeneration(ctx context.Context, request *catalog.CarRequest) (*catalog.ListCarSeriesResponse, error) {
+	_, resp, err := g.listCarSeriesByGeneration.ServeGRPC(ctx, request)
+	if err != nil {
+		return nil, err
+	}
+	return resp.(*catalog.ListCarSeriesResponse), nil
+}
+
+func (g gRPCServer) ListCarModifications(ctx context.Context, request *catalog.CarRequest) (*catalog.ListCarModificationsResponse, error) {
+	_, resp, err := g.listCarModifications.ServeGRPC(ctx, request)
+	if err != nil {
+		return nil, err
+	}
+	return resp.(*catalog.ListCarModificationsResponse), nil
+}
+
+func (g gRPCServer) ListCarEquipments(ctx context.Context, request *catalog.CarRequest) (*catalog.ListCarEquipmentsResponse, error) {
+	_, resp, err := g.listCarEquipments.ServeGRPC(ctx, request)
+	if err != nil {
+		return nil, err
+	}
+	return resp.(*catalog.ListCarEquipmentsResponse), nil
+}
+
+func (g gRPCServer) ListCarCharacteristicValue(ctx context.Context, request *catalog.CarRequest) (*catalog.ListCarCharacteristicValueResponse, error) {
+	_, resp, err := g.listCarCharacteristicValue.ServeGRPC(ctx, request)
+	if err != nil {
+		return nil, err
+	}
+	return resp.(*catalog.ListCarCharacteristicValueResponse), nil
+}
+
 func decodeListCarTypesRequest(_ context.Context, request interface{}) (interface{}, error) {
 	return nil, nil
 }
@@ -66,7 +150,7 @@ func encodeListCarTypesResponse(_ context.Context, response interface{}) (interf
 	return &catalog.ListCarTypesResponse{CarTypes: resp.CarTypes}, nil
 }
 
-func decodeListCarMarksRequest(_ context.Context, request interface{}) (interface{}, error) {
+func decodeCarRequest(_ context.Context, request interface{}) (interface{}, error) {
 	req := request.(*catalog.CarRequest)
 	return endpoints.CarRequest{Id: req.Id}, nil
 }
@@ -76,12 +160,32 @@ func encodeListCarMarksResponse(_ context.Context, response interface{}) (interf
 	return &catalog.ListCarMarkResponse{CarMarks: resp.CarMarks}, nil
 }
 
-func decodeListCarModelsRequest(_ context.Context, request interface{}) (interface{}, error) {
-	req := request.(*catalog.CarRequest)
-	return endpoints.CarRequest{Id: req.Id}, nil
-}
-
 func encodeListCarModelsResponse(_ context.Context, response interface{}) (interface{}, error) {
 	resp := response.(endpoints.ListCarModelsResponse)
 	return &catalog.ListCarModelResponse{CarModels: resp.CarModels}, nil
+}
+
+func encodeListCarGenerationsResponse(_ context.Context, response interface{}) (interface{}, error) {
+	resp := response.(endpoints.ListCarGenerationsResponse)
+	return &catalog.ListCarGenerationResponse{CarGenerations: resp.CarGenerations}, nil
+}
+
+func encodeListCarSeriesResponse(_ context.Context, response interface{}) (interface{}, error) {
+	resp := response.(endpoints.ListCarSeriesResponse)
+	return &catalog.ListCarSeriesResponse{CarSeries: resp.CarSeries}, nil
+}
+
+func encodeListCarModificationsResponse(_ context.Context, response interface{}) (interface{}, error) {
+	resp := response.(endpoints.ListCarModificationsResponse)
+	return &catalog.ListCarModificationsResponse{CarModifications: resp.CarModifications}, nil
+}
+
+func encodeListCarEquipmentsResponse(_ context.Context, response interface{}) (interface{}, error) {
+	resp := response.(endpoints.ListCarEquipmentsResponse)
+	return &catalog.ListCarEquipmentsResponse{CarEquipments: resp.CarEquipments}, nil
+}
+
+func encodeListCarCharacteristicValueResponse(_ context.Context, response interface{}) (interface{}, error) {
+	resp := response.(endpoints.ListCarCharacteristicValues)
+	return &catalog.ListCarCharacteristicValueResponse{CarCharacteristics: resp.CarCharacteristicValues}, nil
 }

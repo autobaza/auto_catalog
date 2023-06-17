@@ -12,12 +12,12 @@ type Service interface {
 	ListCarTypes(context.Context) []*catalog.CarType
 	ListCarMarks(context.Context, string) []*catalog.CarMark
 	ListCarModels(context.Context, string) []*catalog.CarModel
-	//GetCarGenerations(int)
-	//GetCarSeriesByModel(int)
-	//getCarSeriesByGeneration(int)
-	//GetCarModifications(int)
-	//GetCarEquipment(int)
-	//GetCarCharacteristicValue(int)
+	ListCarGenerations(context.Context, string) []*catalog.CarGeneration
+	ListCarSeriesByModel(context.Context, string) []*catalog.CarSerie
+	ListCarSeriesByGeneration(context.Context, string) []*catalog.CarSerie
+	ListCarModifications(context.Context, string) []*catalog.CarModification
+	ListCarEquipments(context.Context, string) []*catalog.CarEquipment
+	ListCarCharacteristicValue(context.Context, string) []*catalog.CarCharacteristicValue
 }
 
 func NewService(logger log.Logger, repo repository.Repository) Service {
@@ -48,22 +48,26 @@ func (s *service) ListCarModels(ctx context.Context, id string) []*catalog.CarMo
 	return s.repo.GetCarModels(id)
 }
 
-//
-//func (s *service) GetCarGenerations(carModelId int) {
-//
-//}
-//func (s *service) GetCarSeriesByModel(carModelId int) {
-//
-//}
-//func (s *service) getCarSeriesByGeneration(carGenerationId int) {
-//
-//}
-//func (s *service) GetCarModifications(carSerieId int) {
-//
-//}
-//func (s *service) GetCarEquipment(carModificationId int) {
-//
-//}
-//func (s *service) GetCarCharacteristicValue(carModificationId int) {
-//
-//}
+func (s *service) ListCarGenerations(ctx context.Context, id string) []*catalog.CarGeneration {
+	return s.repo.GetCarGenerations(id)
+}
+
+func (s *service) ListCarSeriesByModel(ctx context.Context, id string) []*catalog.CarSerie {
+	return s.repo.GetCarSeriesByModel(id)
+}
+
+func (s *service) ListCarSeriesByGeneration(ctx context.Context, id string) []*catalog.CarSerie {
+	return s.repo.GetCarSeriesByGeneration(id)
+}
+
+func (s *service) ListCarModifications(ctx context.Context, id string) []*catalog.CarModification {
+	return s.repo.GetCarModifications(id)
+}
+
+func (s *service) ListCarEquipments(ctx context.Context, id string) []*catalog.CarEquipment {
+	return s.repo.GetCarEquipments(id)
+}
+
+func (s *service) ListCarCharacteristicValue(ctx context.Context, id string) []*catalog.CarCharacteristicValue {
+	return s.repo.GetCarCharacteristicValue(id)
+}

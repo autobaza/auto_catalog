@@ -4,6 +4,12 @@ service AutoCatalogService {
   rpc ListCarTypes(Empty) returns (ListCarTypesResponse) {}
   rpc ListCarMarks(CarRequest) returns (ListCarMarkResponse) {}
   rpc ListCarModels(CarRequest) returns (ListCarModelResponse) {}
+  rpc ListCarGenerations(CarRequest) returns (ListCarGenerationResponse) {}
+  rpc ListCarSeriesByModel(CarRequest) returns (ListCarSeriesResponse) {}
+  rpc ListCarSeriesByGeneration(CarRequest) returns (ListCarSeriesResponse) {}
+  rpc ListCarModifications(CarRequest) returns (ListCarModificationsResponse) {}
+  rpc ListCarEquipments(CarRequest) returns (ListCarEquipmentsResponse) {}
+  rpc ListCarCharacteristicValue(CarRequest) returns (ListCarCharacteristicValueResponse) {}
 }
 
 message ListCarTypesResponse {
@@ -16,6 +22,26 @@ message ListCarMarkResponse {
 
 message ListCarModelResponse {
   repeated CarModel carModels = 1;
+}
+
+message ListCarGenerationResponse {
+  repeated CarGeneration carGenerations = 1;
+}
+
+message ListCarSeriesResponse {
+  repeated CarSerie carSeries = 1;
+}
+
+message ListCarModificationsResponse {
+  repeated CarModification carModifications = 1;
+}
+
+message ListCarEquipmentsResponse {
+  repeated CarEquipment carEquipments = 1;
+}
+
+message ListCarCharacteristicValueResponse {
+  repeated CarCharacteristicValue carCharacteristics = 1;
 }
 
 message Empty{}
@@ -42,4 +68,46 @@ message CarModel {
   string name = 2;
   string mark_id = 3;
   string name_rus = 4;
+}
+
+message CarGeneration {
+  string id = 1;
+  string name = 2;
+  string model_id = 3;
+  string year_begin = 4;
+  string year_end = 5;
+}
+
+message CarSerie {
+  string id = 1;
+  string model_id = 2;
+  string generation_id = 3;
+  string name = 4;
+}
+
+message CarModification {
+  string id = 1;
+  string serie_id = 2;
+  string model_id = 3;
+  string name = 4;
+  string start_production_year = 5;
+  string end_production_year = 6;
+}
+
+message CarEquipment {
+  string id = 1;
+  string modification_id = 2;
+  string name = 3;
+  string price_min = 4;
+  string year = 5;
+}
+
+message CarCharacteristicValue {
+  string id = 1;
+  string characteristic_id = 2;
+  string modification_id = 3;
+  string value = 4;
+  string unit = 5;
+  string value_en = 6;
+  string unit_en = 7;
 }

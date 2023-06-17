@@ -8,16 +8,28 @@ import (
 )
 
 type Endpoints struct {
-	ListCarTypes  endpoint.Endpoint
-	ListCarMarks  endpoint.Endpoint
-	ListCarModels endpoint.Endpoint
+	ListCarTypes                endpoint.Endpoint
+	ListCarMarks                endpoint.Endpoint
+	ListCarModels               endpoint.Endpoint
+	ListCarGenerations          endpoint.Endpoint
+	ListCarSeriesByModel        endpoint.Endpoint
+	ListCarSeriesByGeneration   endpoint.Endpoint
+	ListCarModifications        endpoint.Endpoint
+	ListCarEquipments           endpoint.Endpoint
+	ListCarCharacteristicValues endpoint.Endpoint
 }
 
 func MakeEndpoints(s service.Service) Endpoints {
 	return Endpoints{
-		ListCarTypes:  makeListCarTypesEndpoint(s),
-		ListCarMarks:  makeListCarMarksEndpoint(s),
-		ListCarModels: makeListCarModelsEndpoint(s),
+		ListCarTypes:                makeListCarTypesEndpoint(s),
+		ListCarMarks:                makeListCarMarksEndpoint(s),
+		ListCarModels:               makeListCarModelsEndpoint(s),
+		ListCarGenerations:          makeListCarGenerationsEndpoint(s),
+		ListCarSeriesByModel:        makeListCarSeriesByModelEndpoint(s),
+		ListCarSeriesByGeneration:   makeListCarSeriesByGenerationEndpoint(s),
+		ListCarModifications:        makeListCarModificationsEndpoint(s),
+		ListCarEquipments:           makeListCarEquipmentsEndpoint(s),
+		ListCarCharacteristicValues: makeListCarCharacteristicValuesEndpoint(s),
 	}
 }
 
@@ -41,6 +53,48 @@ func makeListCarModelsEndpoint(s service.Service) endpoint.Endpoint {
 	}
 }
 
+func makeListCarGenerationsEndpoint(s service.Service) endpoint.Endpoint {
+	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		req := request.(CarRequest)
+		return ListCarGenerationsResponse{CarGenerations: s.ListCarGenerations(ctx, req.Id)}, nil
+	}
+}
+
+func makeListCarSeriesByModelEndpoint(s service.Service) endpoint.Endpoint {
+	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		req := request.(CarRequest)
+		return ListCarSeriesResponse{CarSeries: s.ListCarSeriesByModel(ctx, req.Id)}, nil
+	}
+}
+
+func makeListCarSeriesByGenerationEndpoint(s service.Service) endpoint.Endpoint {
+	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		req := request.(CarRequest)
+		return ListCarSeriesResponse{CarSeries: s.ListCarSeriesByGeneration(ctx, req.Id)}, nil
+	}
+}
+
+func makeListCarModificationsEndpoint(s service.Service) endpoint.Endpoint {
+	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		req := request.(CarRequest)
+		return ListCarModificationsResponse{CarModifications: s.ListCarModifications(ctx, req.Id)}, nil
+	}
+}
+
+func makeListCarEquipmentsEndpoint(s service.Service) endpoint.Endpoint {
+	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		req := request.(CarRequest)
+		return ListCarEquipmentsResponse{CarEquipments: s.ListCarEquipments(ctx, req.Id)}, nil
+	}
+}
+
+func makeListCarCharacteristicValuesEndpoint(s service.Service) endpoint.Endpoint {
+	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		req := request.(CarRequest)
+		return ListCarCharacteristicValues{CarCharacteristicValues: s.ListCarCharacteristicValue(ctx, req.Id)}, nil
+	}
+}
+
 type CarRequest struct {
 	Id string
 }
@@ -55,4 +109,24 @@ type ListCarMarksResponse struct {
 
 type ListCarModelsResponse struct {
 	CarModels []*catalog.CarModel
+}
+
+type ListCarGenerationsResponse struct {
+	CarGenerations []*catalog.CarGeneration
+}
+
+type ListCarSeriesResponse struct {
+	CarSeries []*catalog.CarSerie
+}
+
+type ListCarModificationsResponse struct {
+	CarModifications []*catalog.CarModification
+}
+
+type ListCarEquipmentsResponse struct {
+	CarEquipments []*catalog.CarEquipment
+}
+
+type ListCarCharacteristicValues struct {
+	CarCharacteristicValues []*catalog.CarCharacteristicValue
 }

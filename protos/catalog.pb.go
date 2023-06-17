@@ -141,6 +141,201 @@ func (m *ListCarModelResponse) GetCarModels() []*CarModel {
 	return nil
 }
 
+type ListCarGenerationResponse struct {
+	CarGenerations       []*CarGeneration `protobuf:"bytes,1,rep,name=carGenerations,proto3" json:"carGenerations,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
+	XXX_unrecognized     []byte           `json:"-"`
+	XXX_sizecache        int32            `json:"-"`
+}
+
+func (m *ListCarGenerationResponse) Reset()         { *m = ListCarGenerationResponse{} }
+func (m *ListCarGenerationResponse) String() string { return proto.CompactTextString(m) }
+func (*ListCarGenerationResponse) ProtoMessage()    {}
+func (*ListCarGenerationResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5454e87d652be236, []int{3}
+}
+
+func (m *ListCarGenerationResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListCarGenerationResponse.Unmarshal(m, b)
+}
+func (m *ListCarGenerationResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListCarGenerationResponse.Marshal(b, m, deterministic)
+}
+func (m *ListCarGenerationResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListCarGenerationResponse.Merge(m, src)
+}
+func (m *ListCarGenerationResponse) XXX_Size() int {
+	return xxx_messageInfo_ListCarGenerationResponse.Size(m)
+}
+func (m *ListCarGenerationResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListCarGenerationResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListCarGenerationResponse proto.InternalMessageInfo
+
+func (m *ListCarGenerationResponse) GetCarGenerations() []*CarGeneration {
+	if m != nil {
+		return m.CarGenerations
+	}
+	return nil
+}
+
+type ListCarSeriesResponse struct {
+	CarSeries            []*CarSerie `protobuf:"bytes,1,rep,name=carSeries,proto3" json:"carSeries,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *ListCarSeriesResponse) Reset()         { *m = ListCarSeriesResponse{} }
+func (m *ListCarSeriesResponse) String() string { return proto.CompactTextString(m) }
+func (*ListCarSeriesResponse) ProtoMessage()    {}
+func (*ListCarSeriesResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5454e87d652be236, []int{4}
+}
+
+func (m *ListCarSeriesResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListCarSeriesResponse.Unmarshal(m, b)
+}
+func (m *ListCarSeriesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListCarSeriesResponse.Marshal(b, m, deterministic)
+}
+func (m *ListCarSeriesResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListCarSeriesResponse.Merge(m, src)
+}
+func (m *ListCarSeriesResponse) XXX_Size() int {
+	return xxx_messageInfo_ListCarSeriesResponse.Size(m)
+}
+func (m *ListCarSeriesResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListCarSeriesResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListCarSeriesResponse proto.InternalMessageInfo
+
+func (m *ListCarSeriesResponse) GetCarSeries() []*CarSerie {
+	if m != nil {
+		return m.CarSeries
+	}
+	return nil
+}
+
+type ListCarModificationsResponse struct {
+	CarModifications     []*CarModification `protobuf:"bytes,1,rep,name=carModifications,proto3" json:"carModifications,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
+	XXX_unrecognized     []byte             `json:"-"`
+	XXX_sizecache        int32              `json:"-"`
+}
+
+func (m *ListCarModificationsResponse) Reset()         { *m = ListCarModificationsResponse{} }
+func (m *ListCarModificationsResponse) String() string { return proto.CompactTextString(m) }
+func (*ListCarModificationsResponse) ProtoMessage()    {}
+func (*ListCarModificationsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5454e87d652be236, []int{5}
+}
+
+func (m *ListCarModificationsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListCarModificationsResponse.Unmarshal(m, b)
+}
+func (m *ListCarModificationsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListCarModificationsResponse.Marshal(b, m, deterministic)
+}
+func (m *ListCarModificationsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListCarModificationsResponse.Merge(m, src)
+}
+func (m *ListCarModificationsResponse) XXX_Size() int {
+	return xxx_messageInfo_ListCarModificationsResponse.Size(m)
+}
+func (m *ListCarModificationsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListCarModificationsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListCarModificationsResponse proto.InternalMessageInfo
+
+func (m *ListCarModificationsResponse) GetCarModifications() []*CarModification {
+	if m != nil {
+		return m.CarModifications
+	}
+	return nil
+}
+
+type ListCarEquipmentsResponse struct {
+	CarEquipments        []*CarEquipment `protobuf:"bytes,1,rep,name=carEquipments,proto3" json:"carEquipments,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
+	XXX_unrecognized     []byte          `json:"-"`
+	XXX_sizecache        int32           `json:"-"`
+}
+
+func (m *ListCarEquipmentsResponse) Reset()         { *m = ListCarEquipmentsResponse{} }
+func (m *ListCarEquipmentsResponse) String() string { return proto.CompactTextString(m) }
+func (*ListCarEquipmentsResponse) ProtoMessage()    {}
+func (*ListCarEquipmentsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5454e87d652be236, []int{6}
+}
+
+func (m *ListCarEquipmentsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListCarEquipmentsResponse.Unmarshal(m, b)
+}
+func (m *ListCarEquipmentsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListCarEquipmentsResponse.Marshal(b, m, deterministic)
+}
+func (m *ListCarEquipmentsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListCarEquipmentsResponse.Merge(m, src)
+}
+func (m *ListCarEquipmentsResponse) XXX_Size() int {
+	return xxx_messageInfo_ListCarEquipmentsResponse.Size(m)
+}
+func (m *ListCarEquipmentsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListCarEquipmentsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListCarEquipmentsResponse proto.InternalMessageInfo
+
+func (m *ListCarEquipmentsResponse) GetCarEquipments() []*CarEquipment {
+	if m != nil {
+		return m.CarEquipments
+	}
+	return nil
+}
+
+type ListCarCharacteristicValueResponse struct {
+	CarCharacteristics   []*CarCharacteristicValue `protobuf:"bytes,1,rep,name=carCharacteristics,proto3" json:"carCharacteristics,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                  `json:"-"`
+	XXX_unrecognized     []byte                    `json:"-"`
+	XXX_sizecache        int32                     `json:"-"`
+}
+
+func (m *ListCarCharacteristicValueResponse) Reset()         { *m = ListCarCharacteristicValueResponse{} }
+func (m *ListCarCharacteristicValueResponse) String() string { return proto.CompactTextString(m) }
+func (*ListCarCharacteristicValueResponse) ProtoMessage()    {}
+func (*ListCarCharacteristicValueResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5454e87d652be236, []int{7}
+}
+
+func (m *ListCarCharacteristicValueResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListCarCharacteristicValueResponse.Unmarshal(m, b)
+}
+func (m *ListCarCharacteristicValueResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListCarCharacteristicValueResponse.Marshal(b, m, deterministic)
+}
+func (m *ListCarCharacteristicValueResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListCarCharacteristicValueResponse.Merge(m, src)
+}
+func (m *ListCarCharacteristicValueResponse) XXX_Size() int {
+	return xxx_messageInfo_ListCarCharacteristicValueResponse.Size(m)
+}
+func (m *ListCarCharacteristicValueResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListCarCharacteristicValueResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListCarCharacteristicValueResponse proto.InternalMessageInfo
+
+func (m *ListCarCharacteristicValueResponse) GetCarCharacteristics() []*CarCharacteristicValue {
+	if m != nil {
+		return m.CarCharacteristics
+	}
+	return nil
+}
+
 type Empty struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -151,7 +346,7 @@ func (m *Empty) Reset()         { *m = Empty{} }
 func (m *Empty) String() string { return proto.CompactTextString(m) }
 func (*Empty) ProtoMessage()    {}
 func (*Empty) Descriptor() ([]byte, []int) {
-	return fileDescriptor_5454e87d652be236, []int{3}
+	return fileDescriptor_5454e87d652be236, []int{8}
 }
 
 func (m *Empty) XXX_Unmarshal(b []byte) error {
@@ -183,7 +378,7 @@ func (m *CarRequest) Reset()         { *m = CarRequest{} }
 func (m *CarRequest) String() string { return proto.CompactTextString(m) }
 func (*CarRequest) ProtoMessage()    {}
 func (*CarRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_5454e87d652be236, []int{4}
+	return fileDescriptor_5454e87d652be236, []int{9}
 }
 
 func (m *CarRequest) XXX_Unmarshal(b []byte) error {
@@ -224,7 +419,7 @@ func (m *CarType) Reset()         { *m = CarType{} }
 func (m *CarType) String() string { return proto.CompactTextString(m) }
 func (*CarType) ProtoMessage()    {}
 func (*CarType) Descriptor() ([]byte, []int) {
-	return fileDescriptor_5454e87d652be236, []int{5}
+	return fileDescriptor_5454e87d652be236, []int{10}
 }
 
 func (m *CarType) XXX_Unmarshal(b []byte) error {
@@ -273,7 +468,7 @@ func (m *CarMark) Reset()         { *m = CarMark{} }
 func (m *CarMark) String() string { return proto.CompactTextString(m) }
 func (*CarMark) ProtoMessage()    {}
 func (*CarMark) Descriptor() ([]byte, []int) {
-	return fileDescriptor_5454e87d652be236, []int{6}
+	return fileDescriptor_5454e87d652be236, []int{11}
 }
 
 func (m *CarMark) XXX_Unmarshal(b []byte) error {
@@ -336,7 +531,7 @@ func (m *CarModel) Reset()         { *m = CarModel{} }
 func (m *CarModel) String() string { return proto.CompactTextString(m) }
 func (*CarModel) ProtoMessage()    {}
 func (*CarModel) Descriptor() ([]byte, []int) {
-	return fileDescriptor_5454e87d652be236, []int{7}
+	return fileDescriptor_5454e87d652be236, []int{12}
 }
 
 func (m *CarModel) XXX_Unmarshal(b []byte) error {
@@ -385,15 +580,396 @@ func (m *CarModel) GetNameRus() string {
 	return ""
 }
 
+type CarGeneration struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	ModelId              string   `protobuf:"bytes,3,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	YearBegin            string   `protobuf:"bytes,4,opt,name=year_begin,json=yearBegin,proto3" json:"year_begin,omitempty"`
+	YearEnd              string   `protobuf:"bytes,5,opt,name=year_end,json=yearEnd,proto3" json:"year_end,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CarGeneration) Reset()         { *m = CarGeneration{} }
+func (m *CarGeneration) String() string { return proto.CompactTextString(m) }
+func (*CarGeneration) ProtoMessage()    {}
+func (*CarGeneration) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5454e87d652be236, []int{13}
+}
+
+func (m *CarGeneration) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CarGeneration.Unmarshal(m, b)
+}
+func (m *CarGeneration) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CarGeneration.Marshal(b, m, deterministic)
+}
+func (m *CarGeneration) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CarGeneration.Merge(m, src)
+}
+func (m *CarGeneration) XXX_Size() int {
+	return xxx_messageInfo_CarGeneration.Size(m)
+}
+func (m *CarGeneration) XXX_DiscardUnknown() {
+	xxx_messageInfo_CarGeneration.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CarGeneration proto.InternalMessageInfo
+
+func (m *CarGeneration) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *CarGeneration) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *CarGeneration) GetModelId() string {
+	if m != nil {
+		return m.ModelId
+	}
+	return ""
+}
+
+func (m *CarGeneration) GetYearBegin() string {
+	if m != nil {
+		return m.YearBegin
+	}
+	return ""
+}
+
+func (m *CarGeneration) GetYearEnd() string {
+	if m != nil {
+		return m.YearEnd
+	}
+	return ""
+}
+
+type CarSerie struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ModelId              string   `protobuf:"bytes,2,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	GenerationId         string   `protobuf:"bytes,3,opt,name=generation_id,json=generationId,proto3" json:"generation_id,omitempty"`
+	Name                 string   `protobuf:"bytes,4,opt,name=name,proto3" json:"name,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CarSerie) Reset()         { *m = CarSerie{} }
+func (m *CarSerie) String() string { return proto.CompactTextString(m) }
+func (*CarSerie) ProtoMessage()    {}
+func (*CarSerie) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5454e87d652be236, []int{14}
+}
+
+func (m *CarSerie) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CarSerie.Unmarshal(m, b)
+}
+func (m *CarSerie) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CarSerie.Marshal(b, m, deterministic)
+}
+func (m *CarSerie) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CarSerie.Merge(m, src)
+}
+func (m *CarSerie) XXX_Size() int {
+	return xxx_messageInfo_CarSerie.Size(m)
+}
+func (m *CarSerie) XXX_DiscardUnknown() {
+	xxx_messageInfo_CarSerie.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CarSerie proto.InternalMessageInfo
+
+func (m *CarSerie) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *CarSerie) GetModelId() string {
+	if m != nil {
+		return m.ModelId
+	}
+	return ""
+}
+
+func (m *CarSerie) GetGenerationId() string {
+	if m != nil {
+		return m.GenerationId
+	}
+	return ""
+}
+
+func (m *CarSerie) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+type CarModification struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SerieId              string   `protobuf:"bytes,2,opt,name=serie_id,json=serieId,proto3" json:"serie_id,omitempty"`
+	ModelId              string   `protobuf:"bytes,3,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	Name                 string   `protobuf:"bytes,4,opt,name=name,proto3" json:"name,omitempty"`
+	StartProductionYear  string   `protobuf:"bytes,5,opt,name=start_production_year,json=startProductionYear,proto3" json:"start_production_year,omitempty"`
+	EndProductionYear    string   `protobuf:"bytes,6,opt,name=end_production_year,json=endProductionYear,proto3" json:"end_production_year,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CarModification) Reset()         { *m = CarModification{} }
+func (m *CarModification) String() string { return proto.CompactTextString(m) }
+func (*CarModification) ProtoMessage()    {}
+func (*CarModification) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5454e87d652be236, []int{15}
+}
+
+func (m *CarModification) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CarModification.Unmarshal(m, b)
+}
+func (m *CarModification) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CarModification.Marshal(b, m, deterministic)
+}
+func (m *CarModification) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CarModification.Merge(m, src)
+}
+func (m *CarModification) XXX_Size() int {
+	return xxx_messageInfo_CarModification.Size(m)
+}
+func (m *CarModification) XXX_DiscardUnknown() {
+	xxx_messageInfo_CarModification.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CarModification proto.InternalMessageInfo
+
+func (m *CarModification) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *CarModification) GetSerieId() string {
+	if m != nil {
+		return m.SerieId
+	}
+	return ""
+}
+
+func (m *CarModification) GetModelId() string {
+	if m != nil {
+		return m.ModelId
+	}
+	return ""
+}
+
+func (m *CarModification) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *CarModification) GetStartProductionYear() string {
+	if m != nil {
+		return m.StartProductionYear
+	}
+	return ""
+}
+
+func (m *CarModification) GetEndProductionYear() string {
+	if m != nil {
+		return m.EndProductionYear
+	}
+	return ""
+}
+
+type CarEquipment struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ModificationId       string   `protobuf:"bytes,2,opt,name=modification_id,json=modificationId,proto3" json:"modification_id,omitempty"`
+	Name                 string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	PriceMin             string   `protobuf:"bytes,4,opt,name=price_min,json=priceMin,proto3" json:"price_min,omitempty"`
+	Year                 string   `protobuf:"bytes,5,opt,name=year,proto3" json:"year,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CarEquipment) Reset()         { *m = CarEquipment{} }
+func (m *CarEquipment) String() string { return proto.CompactTextString(m) }
+func (*CarEquipment) ProtoMessage()    {}
+func (*CarEquipment) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5454e87d652be236, []int{16}
+}
+
+func (m *CarEquipment) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CarEquipment.Unmarshal(m, b)
+}
+func (m *CarEquipment) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CarEquipment.Marshal(b, m, deterministic)
+}
+func (m *CarEquipment) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CarEquipment.Merge(m, src)
+}
+func (m *CarEquipment) XXX_Size() int {
+	return xxx_messageInfo_CarEquipment.Size(m)
+}
+func (m *CarEquipment) XXX_DiscardUnknown() {
+	xxx_messageInfo_CarEquipment.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CarEquipment proto.InternalMessageInfo
+
+func (m *CarEquipment) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *CarEquipment) GetModificationId() string {
+	if m != nil {
+		return m.ModificationId
+	}
+	return ""
+}
+
+func (m *CarEquipment) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *CarEquipment) GetPriceMin() string {
+	if m != nil {
+		return m.PriceMin
+	}
+	return ""
+}
+
+func (m *CarEquipment) GetYear() string {
+	if m != nil {
+		return m.Year
+	}
+	return ""
+}
+
+type CarCharacteristicValue struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	CharacteristicId     string   `protobuf:"bytes,2,opt,name=characteristic_id,json=characteristicId,proto3" json:"characteristic_id,omitempty"`
+	ModificationId       string   `protobuf:"bytes,3,opt,name=modification_id,json=modificationId,proto3" json:"modification_id,omitempty"`
+	Value                string   `protobuf:"bytes,4,opt,name=value,proto3" json:"value,omitempty"`
+	Unit                 string   `protobuf:"bytes,5,opt,name=unit,proto3" json:"unit,omitempty"`
+	ValueEn              string   `protobuf:"bytes,6,opt,name=value_en,json=valueEn,proto3" json:"value_en,omitempty"`
+	UnitEn               string   `protobuf:"bytes,7,opt,name=unit_en,json=unitEn,proto3" json:"unit_en,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CarCharacteristicValue) Reset()         { *m = CarCharacteristicValue{} }
+func (m *CarCharacteristicValue) String() string { return proto.CompactTextString(m) }
+func (*CarCharacteristicValue) ProtoMessage()    {}
+func (*CarCharacteristicValue) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5454e87d652be236, []int{17}
+}
+
+func (m *CarCharacteristicValue) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CarCharacteristicValue.Unmarshal(m, b)
+}
+func (m *CarCharacteristicValue) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CarCharacteristicValue.Marshal(b, m, deterministic)
+}
+func (m *CarCharacteristicValue) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CarCharacteristicValue.Merge(m, src)
+}
+func (m *CarCharacteristicValue) XXX_Size() int {
+	return xxx_messageInfo_CarCharacteristicValue.Size(m)
+}
+func (m *CarCharacteristicValue) XXX_DiscardUnknown() {
+	xxx_messageInfo_CarCharacteristicValue.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CarCharacteristicValue proto.InternalMessageInfo
+
+func (m *CarCharacteristicValue) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *CarCharacteristicValue) GetCharacteristicId() string {
+	if m != nil {
+		return m.CharacteristicId
+	}
+	return ""
+}
+
+func (m *CarCharacteristicValue) GetModificationId() string {
+	if m != nil {
+		return m.ModificationId
+	}
+	return ""
+}
+
+func (m *CarCharacteristicValue) GetValue() string {
+	if m != nil {
+		return m.Value
+	}
+	return ""
+}
+
+func (m *CarCharacteristicValue) GetUnit() string {
+	if m != nil {
+		return m.Unit
+	}
+	return ""
+}
+
+func (m *CarCharacteristicValue) GetValueEn() string {
+	if m != nil {
+		return m.ValueEn
+	}
+	return ""
+}
+
+func (m *CarCharacteristicValue) GetUnitEn() string {
+	if m != nil {
+		return m.UnitEn
+	}
+	return ""
+}
+
 func init() {
 	proto.RegisterType((*ListCarTypesResponse)(nil), "ListCarTypesResponse")
 	proto.RegisterType((*ListCarMarkResponse)(nil), "ListCarMarkResponse")
 	proto.RegisterType((*ListCarModelResponse)(nil), "ListCarModelResponse")
+	proto.RegisterType((*ListCarGenerationResponse)(nil), "ListCarGenerationResponse")
+	proto.RegisterType((*ListCarSeriesResponse)(nil), "ListCarSeriesResponse")
+	proto.RegisterType((*ListCarModificationsResponse)(nil), "ListCarModificationsResponse")
+	proto.RegisterType((*ListCarEquipmentsResponse)(nil), "ListCarEquipmentsResponse")
+	proto.RegisterType((*ListCarCharacteristicValueResponse)(nil), "ListCarCharacteristicValueResponse")
 	proto.RegisterType((*Empty)(nil), "Empty")
 	proto.RegisterType((*CarRequest)(nil), "CarRequest")
 	proto.RegisterType((*CarType)(nil), "CarType")
 	proto.RegisterType((*CarMark)(nil), "CarMark")
 	proto.RegisterType((*CarModel)(nil), "CarModel")
+	proto.RegisterType((*CarGeneration)(nil), "CarGeneration")
+	proto.RegisterType((*CarSerie)(nil), "CarSerie")
+	proto.RegisterType((*CarModification)(nil), "CarModification")
+	proto.RegisterType((*CarEquipment)(nil), "CarEquipment")
+	proto.RegisterType((*CarCharacteristicValue)(nil), "CarCharacteristicValue")
 }
 
 func init() {
@@ -401,28 +977,58 @@ func init() {
 }
 
 var fileDescriptor_5454e87d652be236 = []byte{
-	// 326 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x52, 0x4d, 0x4b, 0xfb, 0x30,
-	0x1c, 0x5e, 0xb7, 0xfd, 0xd7, 0xee, 0xb7, 0xbf, 0x1e, 0x7e, 0x4e, 0xac, 0xc3, 0xc3, 0x08, 0x82,
-	0xbb, 0x98, 0xc1, 0x86, 0x27, 0x05, 0x91, 0xe1, 0x41, 0x70, 0x97, 0xea, 0x7d, 0x64, 0x6d, 0x90,
-	0xb2, 0x97, 0xd4, 0x24, 0x15, 0xf6, 0xb1, 0xfc, 0x86, 0x92, 0xd8, 0x65, 0x5d, 0x19, 0xb2, 0x5b,
-	0x9f, 0x37, 0x9e, 0x34, 0x4f, 0xa0, 0x9b, 0x49, 0xa1, 0x85, 0x1a, 0xc6, 0x4c, 0xb3, 0xa5, 0xf8,
-	0xa0, 0x16, 0x92, 0x07, 0xe8, 0xbe, 0xa6, 0x4a, 0x4f, 0x98, 0x7c, 0xdf, 0x64, 0x5c, 0x45, 0x5c,
-	0x65, 0x62, 0xad, 0x38, 0x5e, 0x43, 0x10, 0x17, 0x5c, 0xe8, 0xf5, 0x1b, 0x83, 0xce, 0x28, 0xa0,
-	0x85, 0x29, 0x72, 0x0a, 0xb9, 0x87, 0xb3, 0x22, 0x3d, 0x65, 0x72, 0x51, 0x09, 0x1b, 0x6a, 0x2f,
-	0x6c, 0x3d, 0x4e, 0x21, 0x8f, 0xae, 0x7a, 0x2a, 0x12, 0xbe, 0x74, 0xe9, 0x1b, 0x68, 0xc7, 0x05,
-	0xb7, 0x8d, 0xb7, 0xa9, 0x73, 0xed, 0x34, 0xe2, 0xc3, 0xbf, 0xe7, 0x55, 0xa6, 0x37, 0xe4, 0x0a,
-	0x60, 0xc2, 0x64, 0xc4, 0x3f, 0x73, 0xae, 0x34, 0x9e, 0x42, 0x3d, 0x4d, 0x42, 0xaf, 0xef, 0x0d,
-	0xda, 0x51, 0x3d, 0x4d, 0xc8, 0x2d, 0xf8, 0xc5, 0xc9, 0xab, 0x12, 0x22, 0x34, 0xd7, 0x6c, 0xc5,
-	0xc3, 0xba, 0x65, 0xec, 0x37, 0x61, 0xd6, 0x6e, 0x8e, 0x78, 0x8c, 0x1d, 0x2f, 0xc0, 0xd7, 0x9b,
-	0x8c, 0xcf, 0xd2, 0x24, 0x6c, 0x58, 0xba, 0x65, 0xe0, 0x4b, 0x82, 0x97, 0x10, 0x18, 0xc3, 0x4c,
-	0xe6, 0x2a, 0x6c, 0x5a, 0xc5, 0x37, 0x38, 0xca, 0x15, 0x99, 0x43, 0xb0, 0xfd, 0x9f, 0x63, 0x3b,
-	0x56, 0x4c, 0x2e, 0x4a, 0x1d, 0x06, 0xfe, 0xd9, 0x31, 0xfa, 0xf6, 0x00, 0x9f, 0x72, 0x2d, 0x26,
-	0xbf, 0x73, 0xbf, 0x71, 0xf9, 0x95, 0xc6, 0x1c, 0x87, 0xf0, 0xbf, 0xbc, 0x37, 0xb6, 0xa8, 0xbd,
-	0xc2, 0xde, 0x39, 0x3d, 0xf4, 0x0c, 0x48, 0x0d, 0xc7, 0x2e, 0x60, 0x57, 0xc3, 0x0e, 0xdd, 0x5d,
-	0x75, 0xaf, 0x4b, 0x0f, 0xcc, 0x4f, 0x6a, 0x78, 0x07, 0x27, 0xe5, 0x69, 0x2b, 0x29, 0xd7, 0xb5,
-	0xb7, 0x3b, 0xa9, 0xcd, 0x5b, 0xf6, 0x4d, 0x8e, 0x7f, 0x02, 0x00, 0x00, 0xff, 0xff, 0x73, 0x6b,
-	0xd4, 0x0a, 0xab, 0x02, 0x00, 0x00,
+	// 811 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x56, 0xed, 0x6a, 0xeb, 0x46,
+	0x10, 0x95, 0x3f, 0xe2, 0x8f, 0xb9, 0xb1, 0x6f, 0xb2, 0x71, 0xee, 0x75, 0xdc, 0x1b, 0x08, 0x9b,
+	0x42, 0x02, 0xa5, 0x1b, 0x48, 0x68, 0xff, 0x34, 0x6d, 0xda, 0xb8, 0x26, 0x18, 0x1a, 0x08, 0x4a,
+	0x29, 0x14, 0x0a, 0x46, 0x91, 0xb6, 0xe9, 0x92, 0x68, 0xa5, 0xac, 0xa4, 0x80, 0xdf, 0xa0, 0x3f,
+	0xfa, 0x6a, 0xa5, 0x2f, 0xd0, 0x87, 0x29, 0xbb, 0x92, 0x57, 0xab, 0x0f, 0xa7, 0xfe, 0xe7, 0x99,
+	0x39, 0xe7, 0xcc, 0xcc, 0x6a, 0xa5, 0x63, 0x18, 0x85, 0x22, 0x88, 0x83, 0xe8, 0xcc, 0x75, 0x62,
+	0xe7, 0x39, 0x78, 0x24, 0x2a, 0xc4, 0x97, 0x30, 0xfa, 0x89, 0x45, 0xf1, 0xd4, 0x11, 0x3f, 0x2f,
+	0x43, 0x1a, 0xd9, 0x34, 0x0a, 0x03, 0x1e, 0x51, 0xf4, 0x39, 0xf4, 0xdc, 0x2c, 0x37, 0x6e, 0x1c,
+	0xb5, 0x4e, 0xdf, 0x9d, 0xf7, 0x48, 0x06, 0xb2, 0x75, 0x05, 0x7f, 0x03, 0x7b, 0x19, 0xfb, 0xd6,
+	0x11, 0x4f, 0x25, 0xb2, 0x4c, 0x15, 0xc8, 0x0a, 0xa3, 0x2b, 0xf8, 0x4a, 0xb7, 0xbe, 0x0d, 0x3c,
+	0xfa, 0xac, 0xd9, 0x27, 0xd0, 0x77, 0xb3, 0xdc, 0x8a, 0xde, 0x27, 0x1a, 0x95, 0xd7, 0xf0, 0x3d,
+	0x1c, 0x64, 0x02, 0x37, 0x94, 0x53, 0xe1, 0xc4, 0x2c, 0xe0, 0x5a, 0xe5, 0x6b, 0x18, 0xba, 0x66,
+	0x61, 0x25, 0x35, 0x24, 0x45, 0x7c, 0x09, 0x85, 0xbf, 0x87, 0xfd, 0x4c, 0xf4, 0x9e, 0x0a, 0x66,
+	0x9c, 0x48, 0x3a, 0x56, 0x9a, 0x34, 0xc7, 0x52, 0x19, 0x3b, 0xaf, 0xe1, 0xdf, 0xe0, 0x53, 0xbe,
+	0x17, 0xfb, 0x9d, 0xb9, 0xa9, 0xb2, 0x16, 0xba, 0x84, 0x1d, 0xb7, 0x54, 0xcb, 0xf4, 0x76, 0x48,
+	0x89, 0x64, 0x57, 0x90, 0xf8, 0x4e, 0x2f, 0x3d, 0x7b, 0x49, 0x58, 0xe8, 0x53, 0x1e, 0xe7, 0xd2,
+	0x17, 0x30, 0x70, 0xcd, 0x42, 0xa6, 0x3b, 0x20, 0x26, 0xdc, 0x2e, 0x62, 0xb0, 0x0f, 0x38, 0x53,
+	0x9c, 0xfe, 0xe1, 0x08, 0xc7, 0x8d, 0xa9, 0x60, 0x51, 0xcc, 0xdc, 0x5f, 0x9c, 0xe7, 0x84, 0x6a,
+	0xe9, 0x1b, 0x40, 0x6e, 0x19, 0xb1, 0xd2, 0xff, 0x48, 0xd6, 0x90, 0x6b, 0x28, 0xb8, 0x0b, 0x5b,
+	0x33, 0x3f, 0x8c, 0x97, 0xf8, 0x13, 0xc0, 0xd4, 0x11, 0x36, 0x7d, 0x49, 0x68, 0x14, 0xa3, 0x21,
+	0x34, 0x99, 0x37, 0x6e, 0x1c, 0x35, 0x4e, 0xfb, 0x76, 0x93, 0x79, 0xf8, 0x4b, 0xe8, 0x66, 0xf7,
+	0xad, 0x5c, 0x42, 0x08, 0xda, 0xdc, 0xf1, 0xe9, 0xb8, 0xa9, 0x32, 0xea, 0x37, 0x76, 0x14, 0x5c,
+	0x5e, 0xac, 0x4d, 0xe0, 0xe8, 0x23, 0x74, 0xe3, 0x65, 0x48, 0x17, 0xcc, 0x1b, 0xb7, 0x54, 0xba,
+	0x23, 0xc3, 0xb9, 0x87, 0x0e, 0xa0, 0x27, 0x01, 0x0b, 0x91, 0x44, 0xe3, 0xb6, 0xaa, 0x74, 0x65,
+	0x6c, 0x27, 0x11, 0x7e, 0x80, 0xde, 0xea, 0x16, 0x6e, 0xda, 0xc3, 0x77, 0xc4, 0x93, 0xd1, 0x43,
+	0x86, 0x6f, 0xf7, 0xf8, 0xb3, 0x01, 0x83, 0xc2, 0xfd, 0xdc, 0xa8, 0xd3, 0x01, 0xf4, 0x7c, 0x39,
+	0x56, 0xde, 0xaa, 0xab, 0xe2, 0xb9, 0x87, 0x0e, 0x01, 0x96, 0xd4, 0x11, 0x8b, 0x07, 0xfa, 0xc8,
+	0x78, 0xd6, 0xad, 0x2f, 0x33, 0xd7, 0x32, 0x21, 0x99, 0xaa, 0x4c, 0xb9, 0x37, 0xde, 0x4a, 0x99,
+	0x32, 0x9e, 0x71, 0x0f, 0x73, 0xb5, 0xae, 0xba, 0xd3, 0x95, 0x21, 0xcc, 0x86, 0xcd, 0x62, 0xc3,
+	0x63, 0x18, 0x3c, 0xea, 0xe9, 0xf3, 0x81, 0xb6, 0xf3, 0xe4, 0x3c, 0x5f, 0xa2, 0x6d, 0x3c, 0xc1,
+	0x7f, 0x1a, 0xf0, 0xbe, 0x74, 0xfd, 0xeb, 0xfa, 0x46, 0x72, 0x20, 0xa3, 0xaf, 0x8a, 0xe7, 0xde,
+	0x5b, 0x67, 0x50, 0xd3, 0x0d, 0x9d, 0xc3, 0x7e, 0x14, 0x3b, 0x22, 0x5e, 0x84, 0x22, 0xf0, 0x12,
+	0x57, 0x0d, 0x2b, 0x37, 0xcf, 0x4e, 0x61, 0x4f, 0x15, 0xef, 0x74, 0xed, 0x57, 0xea, 0x08, 0x44,
+	0x60, 0x8f, 0x72, 0xaf, 0xc2, 0xe8, 0x28, 0xc6, 0x2e, 0xe5, 0x5e, 0x11, 0x8f, 0xff, 0x6a, 0xc0,
+	0xb6, 0xf9, 0xe2, 0x55, 0xd6, 0x39, 0x81, 0xf7, 0xbe, 0xb1, 0x6e, 0xbe, 0xd5, 0xd0, 0x4c, 0x1b,
+	0x1b, 0xb4, 0x8c, 0x0d, 0x3e, 0x83, 0x7e, 0x28, 0x98, 0x4b, 0x17, 0xbe, 0x7e, 0xb0, 0x3d, 0x95,
+	0xb8, 0x65, 0x5c, 0x12, 0x8c, 0x6d, 0xd4, 0x6f, 0xfc, 0x6f, 0x03, 0x3e, 0xd4, 0xbf, 0xa7, 0x95,
+	0xc1, 0xbe, 0x80, 0x5d, 0xb7, 0x00, 0xcb, 0x47, 0xdb, 0x29, 0x16, 0xe6, 0xb5, 0x5b, 0xb4, 0x6a,
+	0xb7, 0x18, 0xc1, 0xd6, 0xab, 0x6c, 0x97, 0x4d, 0x9b, 0x06, 0x72, 0xd4, 0x84, 0xb3, 0x78, 0x35,
+	0xaa, 0xfc, 0x2d, 0x1f, 0xa6, 0x2a, 0x2e, 0x28, 0xcf, 0x8e, 0xb7, 0xab, 0xe2, 0x19, 0x97, 0x6f,
+	0x95, 0x84, 0xc8, 0x4a, 0x37, 0x7d, 0xab, 0x64, 0x38, 0xe3, 0xe7, 0x7f, 0xb7, 0x01, 0xfd, 0x90,
+	0xc4, 0xc1, 0x34, 0xf5, 0xb7, 0x7b, 0x2a, 0x5e, 0x99, 0x4b, 0xd1, 0x19, 0x6c, 0x9b, 0x06, 0x87,
+	0x3a, 0x44, 0x7d, 0x7d, 0x26, 0xfb, 0xa4, 0xce, 0xf7, 0xb0, 0x85, 0x2e, 0x34, 0x41, 0xd9, 0x14,
+	0x7a, 0x47, 0xf2, 0xaf, 0xd4, 0x64, 0x44, 0x6a, 0xfc, 0x0e, 0x5b, 0xe8, 0x2b, 0x18, 0x98, 0x5e,
+	0x56, 0x62, 0xe9, 0x5e, 0x05, 0xa3, 0xc3, 0x16, 0xba, 0x02, 0x54, 0x71, 0xb0, 0x12, 0x77, 0x42,
+	0xd6, 0x7a, 0x1c, 0xb6, 0xd0, 0xb7, 0xda, 0x43, 0x53, 0xf3, 0xb9, 0x5e, 0xa6, 0xdf, 0xa7, 0x82,
+	0xc4, 0x07, 0x52, 0xeb, 0x68, 0xd8, 0x42, 0xd7, 0xda, 0x4c, 0x56, 0x74, 0xe3, 0xcb, 0xb3, 0xa1,
+	0xc6, 0x8f, 0xa6, 0x8d, 0xe7, 0x46, 0x55, 0xa4, 0x1f, 0x92, 0xb7, 0x2c, 0x11, 0x5b, 0xe8, 0x3b,
+	0xd8, 0xad, 0xd8, 0xda, 0x9a, 0x83, 0xa8, 0xfa, 0x1e, 0xb6, 0xd0, 0x1d, 0x4c, 0xd6, 0x9b, 0x58,
+	0x51, 0xe8, 0x98, 0xfc, 0xbf, 0xdd, 0x61, 0xeb, 0xa1, 0xa3, 0xfe, 0x20, 0x5d, 0xfc, 0x17, 0x00,
+	0x00, 0xff, 0xff, 0x5e, 0x18, 0x1f, 0x2f, 0x38, 0x09, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -440,6 +1046,12 @@ type AutoCatalogServiceClient interface {
 	ListCarTypes(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*ListCarTypesResponse, error)
 	ListCarMarks(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarMarkResponse, error)
 	ListCarModels(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarModelResponse, error)
+	ListCarGenerations(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarGenerationResponse, error)
+	ListCarSeriesByModel(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarSeriesResponse, error)
+	ListCarSeriesByGeneration(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarSeriesResponse, error)
+	ListCarModifications(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarModificationsResponse, error)
+	ListCarEquipments(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarEquipmentsResponse, error)
+	ListCarCharacteristicValue(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarCharacteristicValueResponse, error)
 }
 
 type autoCatalogServiceClient struct {
@@ -477,11 +1089,71 @@ func (c *autoCatalogServiceClient) ListCarModels(ctx context.Context, in *CarReq
 	return out, nil
 }
 
+func (c *autoCatalogServiceClient) ListCarGenerations(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarGenerationResponse, error) {
+	out := new(ListCarGenerationResponse)
+	err := c.cc.Invoke(ctx, "/AutoCatalogService/ListCarGenerations", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *autoCatalogServiceClient) ListCarSeriesByModel(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarSeriesResponse, error) {
+	out := new(ListCarSeriesResponse)
+	err := c.cc.Invoke(ctx, "/AutoCatalogService/ListCarSeriesByModel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *autoCatalogServiceClient) ListCarSeriesByGeneration(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarSeriesResponse, error) {
+	out := new(ListCarSeriesResponse)
+	err := c.cc.Invoke(ctx, "/AutoCatalogService/ListCarSeriesByGeneration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *autoCatalogServiceClient) ListCarModifications(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarModificationsResponse, error) {
+	out := new(ListCarModificationsResponse)
+	err := c.cc.Invoke(ctx, "/AutoCatalogService/ListCarModifications", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *autoCatalogServiceClient) ListCarEquipments(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarEquipmentsResponse, error) {
+	out := new(ListCarEquipmentsResponse)
+	err := c.cc.Invoke(ctx, "/AutoCatalogService/ListCarEquipments", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *autoCatalogServiceClient) ListCarCharacteristicValue(ctx context.Context, in *CarRequest, opts ...grpc.CallOption) (*ListCarCharacteristicValueResponse, error) {
+	out := new(ListCarCharacteristicValueResponse)
+	err := c.cc.Invoke(ctx, "/AutoCatalogService/ListCarCharacteristicValue", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AutoCatalogServiceServer is the server API for AutoCatalogService service.
 type AutoCatalogServiceServer interface {
 	ListCarTypes(context.Context, *Empty) (*ListCarTypesResponse, error)
 	ListCarMarks(context.Context, *CarRequest) (*ListCarMarkResponse, error)
 	ListCarModels(context.Context, *CarRequest) (*ListCarModelResponse, error)
+	ListCarGenerations(context.Context, *CarRequest) (*ListCarGenerationResponse, error)
+	ListCarSeriesByModel(context.Context, *CarRequest) (*ListCarSeriesResponse, error)
+	ListCarSeriesByGeneration(context.Context, *CarRequest) (*ListCarSeriesResponse, error)
+	ListCarModifications(context.Context, *CarRequest) (*ListCarModificationsResponse, error)
+	ListCarEquipments(context.Context, *CarRequest) (*ListCarEquipmentsResponse, error)
+	ListCarCharacteristicValue(context.Context, *CarRequest) (*ListCarCharacteristicValueResponse, error)
 }
 
 // UnimplementedAutoCatalogServiceServer can be embedded to have forward compatible implementations.
@@ -496,6 +1168,24 @@ func (*UnimplementedAutoCatalogServiceServer) ListCarMarks(ctx context.Context, 
 }
 func (*UnimplementedAutoCatalogServiceServer) ListCarModels(ctx context.Context, req *CarRequest) (*ListCarModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListCarModels not implemented")
+}
+func (*UnimplementedAutoCatalogServiceServer) ListCarGenerations(ctx context.Context, req *CarRequest) (*ListCarGenerationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListCarGenerations not implemented")
+}
+func (*UnimplementedAutoCatalogServiceServer) ListCarSeriesByModel(ctx context.Context, req *CarRequest) (*ListCarSeriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListCarSeriesByModel not implemented")
+}
+func (*UnimplementedAutoCatalogServiceServer) ListCarSeriesByGeneration(ctx context.Context, req *CarRequest) (*ListCarSeriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListCarSeriesByGeneration not implemented")
+}
+func (*UnimplementedAutoCatalogServiceServer) ListCarModifications(ctx context.Context, req *CarRequest) (*ListCarModificationsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListCarModifications not implemented")
+}
+func (*UnimplementedAutoCatalogServiceServer) ListCarEquipments(ctx context.Context, req *CarRequest) (*ListCarEquipmentsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListCarEquipments not implemented")
+}
+func (*UnimplementedAutoCatalogServiceServer) ListCarCharacteristicValue(ctx context.Context, req *CarRequest) (*ListCarCharacteristicValueResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListCarCharacteristicValue not implemented")
 }
 
 func RegisterAutoCatalogServiceServer(s *grpc.Server, srv AutoCatalogServiceServer) {
@@ -556,6 +1246,114 @@ func _AutoCatalogService_ListCarModels_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AutoCatalogService_ListCarGenerations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CarRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AutoCatalogServiceServer).ListCarGenerations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/AutoCatalogService/ListCarGenerations",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AutoCatalogServiceServer).ListCarGenerations(ctx, req.(*CarRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AutoCatalogService_ListCarSeriesByModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CarRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AutoCatalogServiceServer).ListCarSeriesByModel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/AutoCatalogService/ListCarSeriesByModel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AutoCatalogServiceServer).ListCarSeriesByModel(ctx, req.(*CarRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AutoCatalogService_ListCarSeriesByGeneration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CarRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AutoCatalogServiceServer).ListCarSeriesByGeneration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/AutoCatalogService/ListCarSeriesByGeneration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AutoCatalogServiceServer).ListCarSeriesByGeneration(ctx, req.(*CarRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AutoCatalogService_ListCarModifications_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CarRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AutoCatalogServiceServer).ListCarModifications(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/AutoCatalogService/ListCarModifications",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AutoCatalogServiceServer).ListCarModifications(ctx, req.(*CarRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AutoCatalogService_ListCarEquipments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CarRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AutoCatalogServiceServer).ListCarEquipments(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/AutoCatalogService/ListCarEquipments",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AutoCatalogServiceServer).ListCarEquipments(ctx, req.(*CarRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AutoCatalogService_ListCarCharacteristicValue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CarRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AutoCatalogServiceServer).ListCarCharacteristicValue(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/AutoCatalogService/ListCarCharacteristicValue",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AutoCatalogServiceServer).ListCarCharacteristicValue(ctx, req.(*CarRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _AutoCatalogService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "AutoCatalogService",
 	HandlerType: (*AutoCatalogServiceServer)(nil),
@@ -571,6 +1369,30 @@ var _AutoCatalogService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListCarModels",
 			Handler:    _AutoCatalogService_ListCarModels_Handler,
+		},
+		{
+			MethodName: "ListCarGenerations",
+			Handler:    _AutoCatalogService_ListCarGenerations_Handler,
+		},
+		{
+			MethodName: "ListCarSeriesByModel",
+			Handler:    _AutoCatalogService_ListCarSeriesByModel_Handler,
+		},
+		{
+			MethodName: "ListCarSeriesByGeneration",
+			Handler:    _AutoCatalogService_ListCarSeriesByGeneration_Handler,
+		},
+		{
+			MethodName: "ListCarModifications",
+			Handler:    _AutoCatalogService_ListCarModifications_Handler,
+		},
+		{
+			MethodName: "ListCarEquipments",
+			Handler:    _AutoCatalogService_ListCarEquipments_Handler,
+		},
+		{
+			MethodName: "ListCarCharacteristicValue",
+			Handler:    _AutoCatalogService_ListCarCharacteristicValue_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
