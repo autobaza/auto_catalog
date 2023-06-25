@@ -11,6 +11,8 @@ import (
 	"github.com/go-kit/kit/log/level"
 	"google.golang.org/grpc"
 	"net"
+	"net/http"
+	_ "net/http/pprof"
 	"os"
 	"os/signal"
 	"syscall"
@@ -47,6 +49,10 @@ func main() {
 		catalog.RegisterAutoCatalogServiceServer(baseServer, grpcServer)
 		level.Info(logger).Log("msg", "Server started successfully 🚀")
 		baseServer.Serve(grpcListener)
+	}()
+
+	go func() {
+		fmt.Println(http.ListenAndServe("localhost:6060", nil))
 	}()
 
 	level.Error(logger).Log("exit", <-errs)

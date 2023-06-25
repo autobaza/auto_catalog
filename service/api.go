@@ -5,7 +5,6 @@ import (
 	catalog "github.com/autobaza/auto_catalog/protos"
 	"github.com/autobaza/auto_catalog/repository"
 	"github.com/go-kit/kit/log"
-	_ "github.com/go-sql-driver/mysql"
 )
 
 type Service interface {

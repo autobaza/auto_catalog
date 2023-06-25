@@ -3,6 +3,7 @@ package repository
 import (
 	"database/sql"
 	catalog "github.com/autobaza/auto_catalog/protos"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 type Repository interface {
