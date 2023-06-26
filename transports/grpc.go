@@ -152,7 +152,7 @@ func encodeListCarTypesResponse(_ context.Context, response interface{}) (interf
 
 func decodeCarRequest(_ context.Context, request interface{}) (interface{}, error) {
 	req := request.(*catalog.CarRequest)
-	return endpoints.CarRequest{Id: req.Id}, nil
+	return endpoints.CarRequest{ID: req.Id}, nil
 }
 
 func encodeListCarMarksResponse(_ context.Context, response interface{}) (interface{}, error) {
